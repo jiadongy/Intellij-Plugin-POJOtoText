@@ -1,0 +1,44 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>POJO to Text</name>
+    <version>1.0</version>
+    <vendor url="https://github.com/jiadongy/Intellij-Plugin-POJOtoText">Jiadong</vendor>
+
+    <description><![CDATA[
+      选中类-右键-MakeText 将简单Java类中转换为其所以Field的纯文本列表。<br>
+      方便在Wiki上做图。<br>
+      <br>
+      Convert POJO to Text, easy to construct Text of POJO's Field Name List when you want to draw a diagram.<br>
+      Select a class in editor, right click and choose [MakeText], enjoy it. <br>
+
+      Please email me if you find any bug.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      1.0 支持POJO生成Field Name List<br>
+      <em></em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="145.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action class="ConvertAction" description="Convert POJO fields to Text" id="POJOtoText.Convert" text="MakeText">
+            <add-to-group anchor="first" group-id="EditorPopupMenu"/>
+            <keyboard-shortcut first-keystroke="shift ctrl alt T" keymap="$default"/>
+        </action>
+    </actions>
+
+</idea-plugin>
